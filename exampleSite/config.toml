@@ -39,7 +39,7 @@ pygmentsUseClasses = true
   fontFamilyParagraph = "Helvetica"
   fontFamilyMonospace = "monospace"
 
-params.logo]
+  [params.logo]
       mobile = "/images/MOLogo.png"
       standard  = "/images/MOLogo.png"
       
