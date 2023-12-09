@@ -39,10 +39,6 @@ pygmentsUseClasses = true
   fontFamilyParagraph = "Helvetica"
   fontFamilyMonospace = "monospace"
 
-  [params.logo]
-      mobile = "/images/MOLogo.png"
-      standard  = "/images/MOLogo.png"
-      
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
   [markup.goldmark]
