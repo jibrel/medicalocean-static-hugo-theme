@@ -19,6 +19,11 @@
       "name": "YouTube",
       "url": "https://www.youtube.com/channel/UCVY49ct74-6V6S5O9g9FSrw",
       "image": "images/social/youtube.svg"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medicalocean.io/",
+      "image": "images/social/medium.svg"
     }
   ]
 }
