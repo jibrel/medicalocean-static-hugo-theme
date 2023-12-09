@@ -2,18 +2,23 @@
   "links": [
     {
       "name": "twitter",
-      "url": "https://twitter.com/zerostaticio",
+      "url": "https://twitter.com/medicaloceanio",
       "image": "images/social/twitter.svg"
     },
     {
       "name": "github",
-      "url": "https://github.com/zerostaticthemes/hugo-winston-theme",
+      "url": "https://github.com/Medical-Ocean",
       "image": "images/social/github.svg"
     },
     {
       "name": "linkedin",
-      "url": "https://www.linkedin.com",
+      "url": "https://www.linkedin.com/company/medical-ocean/",
       "image": "images/social/linkedin.svg"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/channel/UCVY49ct74-6V6S5O9g9FSrw",
+      "image": "images/social/youtube.svg"
     }
   ]
 }
