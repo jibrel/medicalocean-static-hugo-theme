@@ -15,7 +15,9 @@ pygmentsUseClasses = true
 
 [params]
   google_analytics_id = ""
-  twitter_handle = "@zerostaticio"
+  twitter_handle = "@medicaloceanio"
+  youtube_handle = "@MedicalOcean2023"
+  linkedin_handle = "https://www.linkedin.com/company/medical-ocean/"
   showAuthorOnHomepage = true
   showAuthorOnPosts = true
   showIntroContentOnHomepage = true
