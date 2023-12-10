@@ -1,5 +1,5 @@
 ---
-title: Medical Ocean | You don't start out writing good stuff.
+title: Medical Ocean | You don't start out writing good stuff
 description: Connecting Care Empowering Lives
 ---
 
