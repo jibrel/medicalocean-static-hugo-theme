@@ -23,6 +23,8 @@ Contributions are what makes the open source community such an amazing place to 
 
 ## Priorities
 
+
+
 <table>
   <tr>
     <td>
@@ -73,6 +75,9 @@ Contributions are what makes the open source community such an amazing place to 
     </td>
   </tr>
 </table>
+
+
+
 
 ## Developing
 
