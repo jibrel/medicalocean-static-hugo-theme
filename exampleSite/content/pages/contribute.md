@@ -1,11 +1,8 @@
-
 ---
 title: 'Contribute'
 url: "/contribute/"
 image: images/about.jpg
 ---
-
-
 
 # Contributing to Cal.com
 
