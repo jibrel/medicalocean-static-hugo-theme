@@ -1,5 +1,5 @@
 ---
-title: Medical Ocean | Your Health, Your Records, Your Control
+title: Medical Ocean  Your Health, Your Records, Your Control
 description: Connecting Care Empowering Lives
 ---
 
