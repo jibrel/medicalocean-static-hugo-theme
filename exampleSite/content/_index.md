@@ -1,6 +1,7 @@
 ---
 title: Medical Ocean  Your Health, Your Records, Your Control
 description: Connecting Care Empowering Lives
+image: images/dashboard.png
 ---
 
 Medical Ocean is pioneering the future of healthcare technology with innovative software solutions. Specializing in electronic health records, we offer flexible SaaS and on-premise options, including open-source alternatives. Join us in revolutionizing patient care through cutting-edge digital tools.
