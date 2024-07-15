@@ -1,230 +1,89 @@
 ---
 title: 'Contribute'
 url: "/contribute/"
-image: images/about.jpg
+image: images/contribute.png
 ---
 
-# Contributing to Cal.com
+# Contribution Guidelines for Medical Ocean
 
-Contributions are what makes the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Welcome to the Medical Ocean community! We're excited that you're interested in contributing to our open-source healthcare technology projects. These guidelines will help you navigate the contribution process.
 
-## House rules
+## Table of Contents
+1. [Code of Conduct](#code-of-conduct)
+2. [Getting Started](#getting-started)
+3. [How to Contribute](#how-to-contribute)
+4. [Coding Standards](#coding-standards)
+5. [Commit Messages](#commit-messages)
+6. [Pull Request Process](#pull-request-process)
+7. [Reporting Bugs](#reporting-bugs)
+8. [Suggesting Enhancements](#suggesting-enhancements)
+9. [Community](#community)
 
-- Before submitting a new issue or PR, check if it already exists in [issues](https://github.com/calcom/cal.com/issues) or [PRs](https://github.com/calcom/cal.com/pulls).
-- GitHub issues: take note of the `🚨 needs approval` label.
-  - **For Contributors**:
-    - Feature Requests: Wait for a core member to approve and remove the `🚨 needs approval` label before you start coding or submit a PR.
-    - Bugs, Security, Performance, Documentation, etc.: You can start coding immediately, even if the `🚨 needs approval` label is present. This label mainly concerns feature requests.
-  - **Our Process**:
-    - Issues from non-core members automatically receive the `🚨 needs approval` label.
-    - We greatly value new feature ideas. To ensure consistency in the product's direction, they undergo review and approval.
+## Code of Conduct
 
+By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please read it before contributing.
 
+## Getting Started
 
-## Priorities
+1. Fork the repository on GitHub.
+2. Clone your fork locally: `git clone https://github.com/yourusername/repo-name.git`
+3. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name`
+4. Make your changes and commit them with a clear commit message.
+5. Push your changes to your fork: `git push origin feature/your-feature-name`
+6. Create a pull request from your fork to the main repository.
 
+## How to Contribute
 
+- **Code**: Implement new features or fix bugs.
+- **Documentation**: Improve or create new documentation.
+- **Testing**: Write and improve tests.
+- **Bug reports**: Submit detailed bug reports.
+- **Feature requests**: Suggest new features or improvements.
 
-<table>
-  <tr>
-    <td>
-      Type of Issue
-    </td>
-    <td>
-      Priority
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Minor improvements, non-core feature requests
-    </td>
-    <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22Low+priority%22">
-        <img src="https://img.shields.io/badge/-Low%20Priority-green">
-      </a>
-    </td>
-  </tr>
-   <tr>
-    <td>
-      Confusing UX (... but working)
-    </td>
-    <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22Medium+priority%22">
-        <img src="https://img.shields.io/badge/-Medium%20Priority-yellow">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Core Features (Booking page, availability, timezone calculation)
-    </td>
-    <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22High+priority%22">
-        <img src="https://img.shields.io/badge/-High%20Priority-orange">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Core Bugs (Login, Booking page, Emails are not working)
-    </td>
-    <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:Urgent">
-        <img src="https://img.shields.io/badge/-Urgent-red">
-      </a>
-    </td>
-  </tr>
-</table>
+## Coding Standards
 
+- Follow the existing code style in the project.
+- Write clear, commented, and testable code.
+- Ensure your code adheres to our linting rules.
+- Write meaningful variable and function names.
+- Keep functions small and focused on a single task.
 
+## Commit Messages
 
+- Use the present tense ("Add feature" not "Added feature").
+- Use the imperative mood ("Move cursor to..." not "Moves cursor to...").
+- Limit the first line to 72 characters or less.
+- Reference issues and pull requests liberally after the first line.
 
-## Developing
+## Pull Request Process
 
-The development branch is `main`. This is the branch that all pull
-requests should be made against. The changes on the `main`
-branch are tagged into a release monthly.
+1. Ensure your code adheres to the project's coding standards.
+2. Update the README.md with details of changes, if applicable.
+3. Add tests for new features or bug fixes.
+4. Ensure the test suite passes.
+5. Make sure your code lints without errors.
+6. Include a clear description of the changes in your pull request.
+7. Link any relevant issues in the pull request description.
 
-To develop locally:
+## Reporting Bugs
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your
-   own GitHub account and then
-   [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
-2. Create a new branch:
+- Use the GitHub Issues tracker.
+- Describe the bug in detail.
+- Include steps to reproduce the bug.
+- Specify your environment (OS, browser, etc.).
+- If possible, provide a minimal code example that reproduces the bug.
 
-   ```sh
-   git checkout -b MY_BRANCH_NAME
-   ```
+## Suggesting Enhancements
 
-3. Install yarn:
+- Use the GitHub Issues tracker.
+- Provide a clear description of the enhancement.
+- Explain why this enhancement would be useful to most users.
+- List some examples of how this enhancement would be used.
 
-   ```sh
-   npm install -g yarn
-   ```
+## Community
 
-4. Install the dependencies with:
+- Join our [Slack channel](https://medicalocean.slack.com) for discussions.
+- Follow us on [Twitter](https://twitter.com/MedicalOcean) for updates.
+- Subscribe to our [newsletter](https://medicalocean.com/newsletter) for important announcements.
 
-   ```sh
-   yarn
-   ```
-
-5. Set up your `.env` file:
-
-   - Duplicate `.env.example` to `.env`.
-   - Use `openssl rand -base64 32` to generate a key and add it under `NEXTAUTH_SECRET` in the `.env` file.
-   - Use `openssl rand -base64 24` to generate a key and add it under `CALENDSO_ENCRYPTION_KEY` in the `.env` file.
-
-6. Setup Node
-   If your Node version does not meet the project's requirements as instructed by the docs, "nvm" (Node Version Manager) allows using Node at the version required by the project:
-
-   ```sh
-   nvm use
-   ```
-
-   You first might need to install the specific version and then use it:
-
-   ```sh
-   nvm install && nvm use
-   ```
-
-   You can install nvm from [here](https://github.com/nvm-sh/nvm).
-
-7. Start developing and watch for code changes:
-
-   ```sh
-   yarn dev
-   ```
-
-## Building
-
-You can build the project with:
-
-```bash
-yarn build
-```
-
-Please be sure that you can make a full production build before pushing code.
-
-## Testing
-
-More info on how to add new tests coming soon.
-
-### Running tests
-
-This will run and test all flows in multiple Chromium windows to verify that no critical flow breaks:
-
-```sh
-yarn test-e2e
-```
-
-#### Resolving issues
-
-##### E2E test browsers not installed
-
-Run `npx playwright install` to download test browsers and resolve the error below when running `yarn test-e2e`:
-
-```
-Executable doesn't exist at /Users/alice/Library/Caches/ms-playwright/chromium-1048/chrome-mac/Chromium.app/Contents/MacOS/Chromium
-```
-
-## Linting
-
-To check the formatting of your code:
-
-```sh
-yarn lint
-```
-
-If you get errors, be sure to fix them before committing.
-
-## Making a Pull Request
-
-- Be sure to [check the "Allow edits from maintainers" option](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork) while creating your PR.
-- If your PR refers to or fixes an issue, be sure to add `refs #XXX` or `fixes #XXX` to the PR description. Replacing `XXX` with the respective issue number. See more about [Linking a pull request to an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
-- Be sure to fill the PR Template accordingly.
-- Review [App Contribution Guidelines](./packages/app-store/CONTRIBUTING.md) when building integrations
-
-## Guidelines for committing yarn lockfile
-
-Do not commit your `yarn.lock` unless you've made changes to the `package.json`. If you've already committed `yarn.lock` unintentionally, follow these steps to undo:
-
-If your last commit has the `yarn.lock` file alongside other files and you only wish to uncommit the `yarn.lock`:
-   ```bash
-   git checkout HEAD~1 yarn.lock
-   git commit -m "Revert yarn.lock changes"
-   ```
-If you've pushed the commit with the `yarn.lock`:
-   1. Correct the commit locally using the above method.
-   2. Carefully force push:
-
-   ```bash
-   git push origin <your-branch-name> --force
-   ```
-
-If `yarn.lock` was committed a while ago and there have been several commits since, you can use the following steps to revert just the `yarn.lock` changes without impacting the subsequent changes:
-
-1. **Checkout a Previous Version**:
-   - Find the commit hash before the `yarn.lock` was unintentionally committed. You can do this by viewing the Git log:
-     ```bash
-     git log yarn.lock
-     ```
-   - Once you have identified the commit hash, use it to checkout the previous version of `yarn.lock`:
-     ```bash
-     git checkout <commit_hash> yarn.lock
-     ```
-
-2. **Commit the Reverted Version**:
-   - After checking out the previous version of the `yarn.lock`, commit this change:
-     ```bash
-     git commit -m "Revert yarn.lock to its state before unintended changes"
-     ```
-
-3. **Proceed with Caution**:
-   - If you need to push this change, first pull the latest changes from your remote branch to ensure you're not overwriting other recent changes:
-     ```bash
-     git pull origin <your-branch-name>
-     ```
-   - Then push the updated branch:
-     ```bash
-     git push origin <your-branch-name>
-     ```
+Thank you for contributing to Medical Ocean! Your efforts help improve healthcare technology for everyone.
