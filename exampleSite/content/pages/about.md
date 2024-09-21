@@ -36,7 +36,7 @@ At Medical Ocean, we're passionate about empowering small and medium-sized medic
 
 We're so confident in our solutions that we offer a risk-free trial. Experience the power of Medical Ocean and see the difference it can make in your practice. No long-term commitments, no hidden fees - just pure, efficient healthcare technology.
 
-[Start Your Free Trial Today!](https://www.medicalocean.com/trial)
+[Start Your Free Trial Today!]()
 
 ### Get In Touch
 
