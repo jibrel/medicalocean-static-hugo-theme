@@ -42,8 +42,8 @@ We're so confident in our solutions that we offer a risk-free trial. Experience 
 
 Have questions? We'd love to hear from you!
 
-- 📧 Email: admin@medicalocean.com
-- 🌐 Website: [www.medicalocean.com](https://www.medicalocean.com)
-- 🐦 Twitter: [@MedicalOcean](https://twitter.com/MedicalOcean)
+- 📧 Email: admin@medicalocean.co
+- 🌐 Website: [www.medicalocean.co](https://www.medicalocean.co)
+- 🐦 Twitter: [@MedicalOcean](https://twitter.com/MedicalOceanio)
 
 Join us in our mission to bring modern, efficient healthcare technology to medical practices everywhere. Dive into the future of healthcare with Medical Ocean! 🌊🏥
