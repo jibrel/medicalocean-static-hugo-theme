@@ -2,4 +2,4 @@
 node_modules
 .idea
 resources
-public
+public.hugo_build.lock
