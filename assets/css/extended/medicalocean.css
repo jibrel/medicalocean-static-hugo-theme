@@ -52,6 +52,10 @@
     --color-text-tertiary: var(--color-gray-500);
     --color-background: var(--color-white);
     --color-background-alt: var(--color-gray-50);
+    /* Soft slate-blue surface for dark sections (replaces near-black #0F172A) */
+    --color-surface-dark: #243B53;
+    --color-surface-dark-overlay: rgba(255, 255, 255, 0.10);
+    --color-surface-dark-border: rgba(255, 255, 255, 0.14);
 
     /* Typography */
     --font-display: 'Renogare', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -919,7 +923,7 @@ body:not(.page-home) main {
    Footer
    -------------------------------------------------------------------------- */
 .footer {
-    background: var(--color-gray-900);
+    background: var(--color-surface-dark);
     color: var(--color-white);
     padding: var(--space-4xl) 0 var(--space-xl);
 }
@@ -954,7 +958,7 @@ body:not(.page-home) main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-gray-800);
+    background: var(--color-surface-dark-overlay);
     border-radius: var(--radius-full);
     color: var(--color-white);
     transition: all var(--transition-fast);
@@ -998,9 +1002,9 @@ body:not(.page-home) main {
     justify-content: space-between;
     align-items: center;
     padding-top: var(--space-xl);
-    border-top: 1px solid var(--color-gray-800);
+    border-top: 1px solid var(--color-surface-dark-border);
     font-size: 0.875rem;
-    color: var(--color-gray-500);
+    color: var(--color-gray-300);
 }
 
 .footer-legal {
@@ -1190,7 +1194,7 @@ body:not(.page-home) main {
 }
 
 .product-showcase-dark {
-    background: var(--color-gray-900);
+    background: var(--color-surface-dark);
     color: var(--color-white);
 }
 
@@ -1303,7 +1307,7 @@ body:not(.page-home) main {
 }
 
 .product-card-dark {
-    background: var(--color-gray-900);
+    background: var(--color-surface-dark);
     color: var(--color-white);
 }
 
@@ -1324,6 +1328,19 @@ body:not(.page-home) main {
     font-size: 1.125rem;
     opacity: 0.8;
     margin-bottom: var(--space-lg);
+}
+
+/* Keep titles/taglines legible on dark & colored sections
+   (overrides the global dark heading/text color) */
+.product-showcase-dark .product-showcase-title,
+.product-showcase-gradient .product-showcase-title,
+.product-card-dark .product-card-title,
+.product-card-blue .product-card-title,
+.product-showcase-dark .product-showcase-tagline,
+.product-showcase-gradient .product-showcase-tagline,
+.product-card-dark .product-card-tagline,
+.product-card-blue .product-card-tagline {
+    color: var(--color-white);
 }
 
 .product-card-image {
