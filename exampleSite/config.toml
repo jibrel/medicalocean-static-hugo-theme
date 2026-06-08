@@ -1,9 +1,9 @@
 baseURL = "/"
 languageCode = "en-us"
-theme = "hugo-winston-theme"
-themesDir = "themes"
+theme = "medicalocean-static-hugo-theme"
+themesDir = "../.."
 title = "Medical Ocean"
-paginate = 3
+paginate = 10
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -18,28 +18,38 @@ pygmentsUseClasses = true
   twitter_handle = "@medicaloceanio"
   youtube_handle = "@MedicalOcean2023"
   linkedin_handle = "https://www.linkedin.com/company/medical-ocean/"
+
+  # Company Info
+  companyName = "Medical Ocean"
+  companyEmail = "admin@medicalocean.co"
+  companyAddress = "86-90, Paul Street, London EC2A 4NE"
+  companyTagline = "Simple software, connected healthcare."
+
   showAuthorOnHomepage = true
   showAuthorOnPosts = true
   showIntroContentOnHomepage = true
   showPostsOnHomepage = false
   usePaginationOnHomepage = false
-  limitPostsOnHomepage = 3 # only used if usePaginationOnHomepage is false
+  limitPostsOnHomepage = 3
   sortPostsByDateOldestFirst = false
   addDot = true
   addFrame = true
-  highlightColor = '#0072CE'
+
+  # Brand Colors - Ocean Blue Palette
+  highlightColor = '#1E88E5'
   baseColor = "#ffffff"
-  baseOffsetColor = "#eaeaea"
-  headingColor = "#1c1b1d"
-  textColor = "#4e5157"
-  dotColor = "#7b16ff"
-  enableGoogleFonts = true 
-  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+  baseOffsetColor = "#F8FAFC"
+  headingColor = "#0F172A"
+  textColor = "#475569"
+  dotColor = "#1E88E5"
+
+  enableGoogleFonts = true
+  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   fontFamilyHeading = "Poppins"
-  fontFamilyParagraph = "Helvetica"
+  fontFamilyParagraph = "Poppins"
   fontFamilyMonospace = "monospace"
 
-# markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
+# markdown config settings
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -54,27 +64,27 @@ pygmentsUseClasses = true
     url = '/'
     weight = 1
   [[menu.main]]
+    name = "Products"
+    identifier = "products"
+    weight = 2
+    url = "/#products"
+  [[menu.main]]
+    name = "Features"
+    identifier = "features"
+    weight = 3
+    url = "/#features"
+  [[menu.main]]
     name = "About"
     identifier = "about"
-    weight = 2
-    url = "/About/"
-  [[menu.main]]
-    name = "Contribute"
-    identifier = "contribute"
-    weight = 3
-    url = "/Contribute/"
-  [[menu.main]]
-    name = "Yazid"
-    identifier = "yazid"
     weight = 4
-    url = "/Yazid/"
+    url = "/about/"
   [[menu.main]]
     name = "Blog"
     identifier = "blog"
     weight = 5
     url = "/posts/"
   [[menu.main]]
-    name = "Tags"
-    identifier = "tags"
+    name = "Contact"
+    identifier = "contact"
     weight = 6
-    url = "/tags/"
+    url = "/#contact"

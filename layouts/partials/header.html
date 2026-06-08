@@ -1,23 +1,24 @@
-<div class='header'>
-  <a class="header-logo" href="{{ .Site.Home.RelPermalink }}"><img  width="380" height="116" alt="{{ .Site.Title }}" src="/images/MOLogo.png" /></a>
-  
-  
-  <div class="menu-main">
-    <ul>
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <a href="{{ .Site.Home.RelPermalink }}" class="nav-logo">
+      <img src="/images/logo-icon.png" alt="{{ .Site.Title }}" class="nav-logo-img">
+      <span class="nav-logo-text">{{ .Site.Title }}</span>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-      {{ $active = or $active (eq (.URL | relLangURL) ($currentPage.RelPermalink | relLangURL)) }}
-      <li class="menu-item-{{ .Name | lower }} {{ if $active }}active{{ end }}">
-        <a href="{{.URL}}">
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
+      <li>
+        <a href="{{ .URL }}" class="nav-link {{ if eq .Identifier "contact" }}nav-cta{{ end }} {{ if $active }}active{{ end }}">
+          {{ .Name }}
         </a>
       </li>
-      {{end}}
+      {{ end }}
     </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
-    <button class="hamburger">Menu</button>
-  </div>
-</div>
+</nav>

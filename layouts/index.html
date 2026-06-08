@@ -2,42 +2,382 @@
 
 {{ define "main" }}
 
-  {{ if .Site.Params.showAuthorOnHomepage }}
-    {{ partial "author-large.html" . }}
-  {{ end }}
-
-  <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
-    {{ if .Site.Params.showIntroContentOnHomepage}}
-      <div class="intro-content">{{ .Content }}</div>
-    {{ end }}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-background">
+    <video autoplay muted loop playsinline class="hero-video" id="hero-video">
+      <source src="/videos/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
   </div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="hero-title-line">Simple software,</span>
+      <span class="hero-title-line highlight">connected healthcare.</span>
+    </h1>
+    <p class="hero-subtitle">Enterprise healthcare applications designed for the modern medical facility. Seamless integration. Powerful insights. Better outcomes.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Request Demo</a>
+      <a href="#products" class="btn btn-secondary">Explore Products</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <div class="scroll-indicator"></div>
+  </div>
+</section>
 
-  {{ if .Site.Params.showPostsOnHomepage }}
+<!-- Products Section -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Products</h2>
+      <p class="section-subtitle">A complete ecosystem of healthcare solutions, built to work together seamlessly.</p>
+    </div>
 
-    {{ $pages := where .Site.RegularPages "Type" "posts" }}
-    {{ $sorted := ($pages.ByParam "date").Reverse }}
-    {{ if .Site.Params.sortPostsByDateOldestFirst }}
-      {{ $sorted = $pages.ByParam "date" }}
-    {{ end }}
+    <div class="products-grid">
+      <article class="product-card" data-product="ehr">
+        <div class="product-icon">
+          <img src="/images/icons/ehr-icon.png" alt="Electronic Health Records">
+        </div>
+        <h3 class="product-title">Electronic Health Records</h3>
+        <p class="product-description">Comprehensive patient records at your fingertips. Intuitive charting, intelligent workflows, and seamless data access across departments.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
 
-    {{ $paginator := .Paginate $sorted }}
+      <article class="product-card" data-product="pharmacy">
+        <div class="product-icon">
+          <img src="/images/icons/pharmacy-icon.png" alt="Pharmacy Management">
+        </div>
+        <h3 class="product-title">Pharmacy Management</h3>
+        <p class="product-description">Streamline medication dispensing, inventory control, and prescription management with intelligent automation and safety checks.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
 
-    {{ if .Site.Params.usePaginationOnHomepage }}
-      {{ range $paginator.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
-      {{ partial "paginator" . }}
-    {{ else }}
-      {{ $limit := .Site.Params.limitPostsOnHomepage | default 3 }}
-      {{ range first $limit $sorted}}
-        {{ .Render "summary" }}
-      {{ end }}
-      <a class="view-more" href="/posts">More Posts</a>
-    {{ end }}
-  {{ end }}
+      <article class="product-card" data-product="anesthesia">
+        <div class="product-icon">
+          <img src="/images/icons/anesthesia-icon.png" alt="Anesthesia Module">
+        </div>
+        <h3 class="product-title">Anesthesia Module</h3>
+        <p class="product-description">Real-time monitoring, automated documentation, and decision support for anesthesiologists. Safety meets efficiency.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
+
+      <article class="product-card" data-product="labs">
+        <div class="product-icon">
+          <img src="/images/icons/labs-icon.png" alt="Laboratory Information System">
+        </div>
+        <h3 class="product-title">Laboratory Information System</h3>
+        <p class="product-description">From sample collection to result delivery. Automate workflows, reduce errors, and accelerate turnaround times.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
+
+      <article class="product-card" data-product="hr">
+        <div class="product-icon">
+          <img src="/images/icons/hr-icon.png" alt="HR & Payroll">
+        </div>
+        <h3 class="product-title">HR & Payroll</h3>
+        <p class="product-description">Manage your healthcare workforce with ease. Scheduling, attendance, payroll, and compliance—all in one place.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
+
+      <article class="product-card" data-product="incident">
+        <div class="product-icon">
+          <img src="/images/icons/incident-icon.png" alt="Incident Reporting">
+        </div>
+        <h3 class="product-title">Incident Reporting</h3>
+        <p class="product-description">Proactive safety culture starts here. Anonymous reporting, root cause analysis, and actionable insights for continuous improvement.</p>
+        <a href="#" class="product-link">Learn more <span class="arrow">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- App Showcase Section -->
+<section class="app-showcase" id="showcase">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">See It in Action</h2>
+      <p class="section-subtitle">Intuitive interfaces designed for busy healthcare professionals. Clean, fast, and easy to use.</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-item showcase-large">
+        <img src="/images/screenshots/app-appointments.png" alt="Appointments Calendar" class="showcase-image">
+        <div class="showcase-caption">
+          <h4>Smart Scheduling</h4>
+          <p>Weekly calendar view with color-coded appointments across all practitioners</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <img src="/images/screenshots/app-vitals-dashboard.png" alt="Patient Vitals Dashboard" class="showcase-image">
+        <div class="showcase-caption">
+          <h4>Real-time Vitals</h4>
+          <p>Interactive charts tracking blood pressure, heart rate, temperature & more</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <img src="/images/screenshots/app-patient-profile.png" alt="Patient Profile" class="showcase-image">
+        <div class="showcase-caption">
+          <h4>Complete Patient Profiles</h4>
+          <p>Allergies, notes, and clinical history at a glance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Medical Ocean</h2>
+      <p class="section-subtitle">Built by healthcare professionals, for healthcare professionals.</p>
+    </div>
+
+    <div class="features-showcase">
+      <div class="feature-main">
+        <div class="feature-visual">
+          <img src="/images/screenshots/app-vitals-dashboard.png" alt="Medical Ocean Patient Vitals Dashboard" class="feature-image">
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item" data-feature="integration">
+          <div class="feature-number">01</div>
+          <div class="feature-content">
+            <h3>Seamless Integration</h3>
+            <p>All modules communicate in real-time. Patient data flows securely between departments without manual intervention.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-feature="security">
+          <div class="feature-number">02</div>
+          <div class="feature-content">
+            <h3>Enterprise Security</h3>
+            <p>HIPAA compliant. End-to-end encryption. Role-based access control. Your patient data is protected at every layer.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-feature="analytics">
+          <div class="feature-number">03</div>
+          <div class="feature-content">
+            <h3>Intelligent Analytics</h3>
+            <p>Transform data into actionable insights. Real-time dashboards, predictive analytics, and customizable reports.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-feature="support">
+          <div class="feature-number">04</div>
+          <div class="feature-content">
+            <h3>24/7 Support</h3>
+            <p>Healthcare never stops, and neither do we. Dedicated support team available around the clock.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-count="500">0</span>
+        <span class="stat-suffix">+</span>
+        <span class="stat-label">Healthcare Facilities</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="50000">0</span>
+        <span class="stat-suffix">+</span>
+        <span class="stat-label">Healthcare Professionals</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="10">0</span>
+        <span class="stat-suffix">M+</span>
+        <span class="stat-label">Patient Records Managed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="99.9">0</span>
+        <span class="stat-suffix">%</span>
+        <span class="stat-label">Uptime Guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Trusted by Healthcare Leaders</h2>
+    </div>
+    <div class="testimonials-slider" id="testimonials-slider">
+      <div class="testimonial-card">
+        <blockquote class="testimonial-quote">"Medical Ocean transformed how we manage patient records. The integration between departments is seamless, and our staff adoption rate was incredible."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <span class="author-name">Dr. Sarah Mitchell</span>
+            <span class="author-title">Chief Medical Officer, Metro General Hospital</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote class="testimonial-quote">"The pharmacy module alone saved us countless hours. Real-time inventory tracking and automated reordering have eliminated stockouts completely."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <span class="author-name">James Chen, PharmD</span>
+            <span class="author-title">Director of Pharmacy, Valley Medical Center</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote class="testimonial-quote">"Finally, an incident reporting system that staff actually use. The anonymous reporting feature has helped us identify and address issues before they escalate."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <span class="author-name">Linda Rodriguez, RN</span>
+            <span class="author-title">Quality Assurance Director, Sunrise Health Network</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2 class="section-title">Ready to Transform Your Healthcare Operations?</h2>
+        <p class="contact-description">Schedule a personalized demo and discover how Medical Ocean can streamline your facility's workflows.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <a href="mailto:{{ .Site.Params.companyEmail }}">{{ .Site.Params.companyEmail }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>{{ .Site.Params.companyAddress }}</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Dr. Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@hospital.org">
+        </div>
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" required placeholder="Metro General Hospital">
+        </div>
+        <div class="form-group">
+          <label for="interest">Primary Interest</label>
+          <select id="interest" name="interest" required>
+            <option value="">Select a product</option>
+            <option value="ehr">Electronic Health Records</option>
+            <option value="pharmacy">Pharmacy Management</option>
+            <option value="anesthesia">Anesthesia Module</option>
+            <option value="labs">Laboratory Information System</option>
+            <option value="hr">HR & Payroll</option>
+            <option value="incident">Incident Reporting</option>
+            <option value="full-suite">Full Product Suite</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (Optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Request Demo</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 {{ end }}
 
 {{ define "footer_js" }}
+<script>
+// Navigation scroll behavior
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+  });
+}
+
+// Counter animation
+const statNumbers = document.querySelectorAll('.stat-number');
+const observerOptions = { threshold: 0.5 };
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseFloat(entry.target.dataset.count);
+      const duration = 2000;
+      const start = 0;
+      const startTime = performance.now();
+      const isDecimal = target % 1 !== 0;
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutExpo = 1 - Math.pow(2, -10 * progress);
+        const current = start + (target - start) * easeOutExpo;
+
+        entry.target.textContent = isDecimal ? current.toFixed(1) : Math.floor(current).toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          entry.target.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+        }
+      }
+      requestAnimationFrame(updateCounter);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+statNumbers.forEach(stat => observer.observe(stat));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offsetTop = target.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      if (navMenu.classList.contains('active')) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+});
+</script>
 {{ end }}
