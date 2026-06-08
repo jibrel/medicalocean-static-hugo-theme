@@ -1432,3 +1432,97 @@ body:not(.page-home) main {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 .mb-xl { margin-bottom: var(--space-xl); }
+
+/* --------------------------------------------------------------------------
+   Device Mockups — frame screenshots like a Mac / iPad screen
+   (inspired by Apple's "Apple for Students" section)
+   -------------------------------------------------------------------------- */
+
+/* Shared screen wrapper: dark aluminium bezel around the screenshot */
+.device-laptop,
+.device-tablet {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    background: linear-gradient(160deg, #2b2b2e 0%, #1a1a1c 55%, #0f0f11 100%);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 30px 60px -22px rgba(15, 23, 42, 0.55);
+}
+
+.device-laptop img,
+.device-tablet img {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    background: var(--color-white);
+}
+
+/* ---- Laptop (MacBook-style) — used in full-width showcases ---- */
+.device-laptop {
+    margin: 0 auto 26px;          /* room for the keyboard base below */
+    padding: 13px 13px 15px;
+    border-radius: 18px 18px 8px 8px;
+}
+
+.device-laptop img {
+    border-radius: 5px;
+}
+
+/* camera dot */
+.device-laptop::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    transform: translateX(-50%);
+    background: #3a3a3c;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+/* keyboard deck / base of the laptop */
+.device-laptop::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 112%;
+    height: 15px;
+    background: linear-gradient(180deg, #e2e5e9 0%, #c2c6cc 45%, #9ea4ab 100%);
+    border-radius: 2px 2px 12px 12px / 2px 2px 80px 80px;
+    box-shadow: 0 12px 20px -10px rgba(15, 23, 42, 0.45);
+}
+
+/* ---- Tablet (iPad-style) — used in product cards ---- */
+.device-tablet {
+    width: 90%;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 24px;
+}
+
+.device-tablet img {
+    border-radius: 11px;
+}
+
+/* On product cards, sit the tablet centred instead of bleeding to the edge */
+.product-card-image {
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .device-tablet {
+        width: 100%;
+    }
+    .device-laptop::after {
+        width: 108%;
+        height: 12px;
+    }
+}
