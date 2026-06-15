@@ -20,9 +20,11 @@ pygmentsUseClasses = true
   linkedin_handle = "https://www.linkedin.com/company/medical-ocean/"
 
   # Company Info
-  companyName = "Medical Ocean"
+  companyName = "Medical Ocean LTD"
+  companyNumber = "14943900"
   companyEmail = "admin@medicalocean.co"
-  companyAddress = "86-90, Paul Street, London EC2A 4NE"
+  companyPhone = "0787 226 979"
+  companyAddress = "86-90 Paul Street, London EC2A 4NE"
   companyTagline = "Simple software, connected healthcare."
 
   showAuthorOnHomepage = true
